@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/style.css}" />
+    <title>Your Page Title</title>
+</head>
+<body>
+
+<h1>Dodaj zadanie</h1>
+<p>Wypełnij formularz</p>
+
+<form action="/submit" method="post">
+    <label for="inputText">Wprowadź tekst:</label>
+    <input type="text" id="inputText" name="inputText"/>
+
+    <input type="submit" value="Prześlij"/>
+</form>
+
+</body>
+</html>
