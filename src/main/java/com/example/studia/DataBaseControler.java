@@ -18,7 +18,7 @@ public class DataBaseControler {
         DataBase dataBase = new DataBase(1, name, origin , head);
         dataBaseRepository.save(dataBase);
     }
-
+    @PostMapping("/submit")
     public void addFamily2() {
         DataBase dataBase = new DataBase(2, "123", "origin" , 3);
         dataBaseRepository.save(dataBase);

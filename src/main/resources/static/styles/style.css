@@ -1,19 +1,84 @@
-h1{
-    color:red;
+.main{
+    display:flex;
 }
-p{
-    color:blue;
+.leftSiteBar{
+    background-color: #E8E8E8;
+    height: 95vh;
+    width: 250px;
+    padding: 10px;
+    padding-right:14px;
+    margin-top: 4px;
+    border-radius: 6px;
 }
-.grid1440{
-    max-width:1440px;
+.siteBarUpMenu{
+    display:flex;
+    justify-content: space-between
 }
-.graybg{
-    background-color:gray;
+.icon-reorder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+.search{
+    padding: 5px 10px;
+    border: 1px solid #C0C0C0;
+    border-radius:6px;
+}
+.icon-search{
+    color: #C0C0C0;
+}
+.menuList{
+    margin-top:10px;
+}
+
+h2{
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.menuList > ul {
+  padding-left:0px;
+}
+
+.menuList > ul > li{
+padding-left:15px !important;
+list-style: none;
+padding:5px;
+cursor: pointer;
+}
+.menuList > ul > li:hover{
+    background-color: #C0C0C0;
+    border-radius:6px;
+}
+.right > h1 {
+    margin-top:0;
+}
+.right{
+    padding-left:15px;
+    padding-right:15px;
     width:100%;
-    height: 100px;
 }
-.content{
-    background-color: #d7c9c9;
-    width:100%;
-    height: 100px;
+
+.table{
+    max-height:600px;
+    border-radius:6px;
+    border: 1px solid #D3D3D3;
+}
+.noteBox{
+    background-color: green;
+    width: 100%;
+    max-height:250px;
+    height: 100%;
+    border-radius: 6px;
+}
+.box{
+        margin: 10px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 30px;
 }
