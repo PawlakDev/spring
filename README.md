@@ -16,7 +16,7 @@ Jest równiez mozliwość planowania treningów, dodawania ćwiczeń do planu tr
  - user - login, hasło, można skorzystac z defaultowego usera springa
  - trening (Workout) - końcówka CRUD, model ma mieć FK do usera oraz do planu treningowego, dziedzczy o typie treningu
  - plan treningowy (WorkoutPlan) - końcówka CRUD, model ma mieć FK do usera
- - cwiczenie (Exercise) - końcówka CRUD, model ma mieć FK do planu treningowego
+ - cwiczenie (Exercise) - końcówka CRUD, model ma mieć FK do planowanego tringu
  - opis treningu (WorkoutSummary) - końcówka CRUD, model ma mieć FK do treningu
  - typ treningu (WorkoutType) - końcówka READONLY, Model łączący modele z kategori typu treningu z treningiem
  #### 1.2. Modele typu treningu:
