@@ -1,5 +1,11 @@
 package com.example.studia.models.workout_type;
 
+import com.example.studia.models.Exercise;
+import jakarta.persistence.*;
+
+import java.util.List;
+
+@Entity
 public class Gym {
     // pola: min reps, max reps, min weight, max weight, series, rest_time
     private int min_reps;
@@ -8,6 +14,10 @@ public class Gym {
     private double max_weight; // walidacja min < max
     private int series;
     private double rest_time;
+
+    // czy to ma sens
+    @OneToMany(mappedBy = "workout")
+    private List<Exercise> exercises;
 
     public Gym() {
     }
@@ -18,6 +28,7 @@ public class Gym {
         this.max_weight = max_weight;
         this.series = series;
         this.rest_time = rest_time;
+
     }
 
 }

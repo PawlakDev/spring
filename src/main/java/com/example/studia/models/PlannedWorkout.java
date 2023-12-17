@@ -1,21 +1,28 @@
 package com.example.studia.models;
 
-import com.example.studia.models.WorkoutPlan;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class PlannedWorkout {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToMany(mappedBy = "workout")
-    private List<Exercise> exercises;
 
-    @ManyToOne
-    @JoinColumn(name = "workout_plan_id")
-    private WorkoutPlan workoutPlan;
+    @OneyToOne
+    @JoinColumn(name = "workout_type_id")
+    private WorkoutType workoutType;
 
 
     @Temporal(TemporalType.TIMESTAMP)

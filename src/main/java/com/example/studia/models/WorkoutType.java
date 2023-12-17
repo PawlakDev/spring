@@ -3,10 +3,19 @@ package com.example.studia.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.hibernate.mapping.ForeignKey;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+// dzidziczenie z modeli typów?
+
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class WorkoutType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

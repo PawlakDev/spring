@@ -1,6 +1,18 @@
+package com.example.studia.models;
+
+import jakarta.persistence.*;
+import org.springframework.boot.convert.DurationFormat;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -8,6 +20,8 @@ public class Exercise {
 
     private String name;
     private String description;
+
+    @DurationFormat()
     private int duration;  // czas trwania w sekundach can be null
 
     public Exercise() {

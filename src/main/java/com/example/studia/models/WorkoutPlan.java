@@ -2,9 +2,17 @@ package com.example.studia.models;
 
 import jakarta.persistence.*;
 
-// przechowywanie planu treningowego
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class WorkoutPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +23,6 @@ public class WorkoutPlan {
     private User user;
 
     @OneToMany(mappedBy = "workoutPlan")
-    private List<WorkoutType> workoutTypes;
+    private List<PlannedWorkout> plannedWorkouts;
 
 }

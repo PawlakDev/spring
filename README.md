@@ -13,14 +13,14 @@ Jest równiez mozliwość planowania treningów, dodawania ćwiczeń do planu tr
 ###  1. zaprojektowanie modeli bazy danych
 
 #### 1.1. Modele główne bazy danych:
- - user - login, hasło, można skorzystac z defaultowego usera springa
- - trening (Workout) - końcówka CRUD, model ma mieć FK do usera oraz do planu treningowego, dziedzczy o typie treningu
- - plan treningowy (WorkoutPlan) - końcówka CRUD, model ma mieć FK do usera
- - cwiczenie (Exercise) - końcówka CRUD, model ma mieć FK do planowanego tringu
- - opis treningu (WorkoutSummary) - końcówka CRUD, model ma mieć FK do treningu
- - typ treningu (WorkoutType) - końcówka READONLY, Model łączący modele z kategori typu treningu z treningiem
+ - user - korzystanie z Spring Security. Pola: login, hasło, imie, nazwisko, rok urodzenia 
+ - trening planowany (PlannedWorkout) - model opisuje planowany trening w planie treningowym. Końcówka CRUD, model ma mieć FK do workoutType, pozostałe pola: data (lub dzień tygodnia)
+ - plan treningowy (WorkoutPlan) - końcówka CRUD, model ma mieć FK do usera i zawiera liste planowanych treningów
+ - cwiczenie (Exercise) - końcówka CRUD, model jest wykorzystywany do siłowni i ma pola: nazwa, opis, czas trwania
+ - trening odbyty (WorkoutSummary) - końcówka CRUD, model ma mieć FK do usera, FK do treningu planowanego, inne do dodania pola
+ - typ treningu (WorkoutType) - końcówka READONLY, Model łączący modele z kategori typu treningu z treningiem, zawiera czas trwania, do odokończenia
  #### 1.2. Modele typu treningu:
- - siłownia (Gym) - końcówka READONLY, pola: min reps, max reps, min weight, max weight, series, rest_time
+ - siłownia (Gym) - końcówka READONLY, FK do Excercise, pola: min reps, max reps, min weight, max weight, series, rest_time
  - bieganie (Running) - końcówka READONLY, pola: distance, avg_speed, avg_heart_rate
  - rower (Bike) - końcówka READONLY, pola: distance, avg_speed, avg_heart_rate
  - ergometr (IndoorRower) - końcówka READONLY, pola: distance, avg_speed, avg_heart_rate, avg_watts
