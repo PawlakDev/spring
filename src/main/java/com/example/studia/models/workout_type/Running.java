@@ -1,6 +1,12 @@
 package com.example.studia.models.workout_type;
 
-public class Running {
+import com.example.studia.models.WorkoutType;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("running")
+public class Running  extends WorkoutType {
     // pola: distance, avg_speed, avg_heart_rate
     private double distance;
     private double avg_speed;

@@ -1,12 +1,14 @@
 package com.example.studia.models.workout_type;
 
 import com.example.studia.models.Exercise;
+import com.example.studia.models.WorkoutType;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-public class Gym {
+@DiscriminatorValue("gym")
+public class Gym extends WorkoutType {
     // pola: min reps, max reps, min weight, max weight, series, rest_time
     private int min_reps;
     private int max_reps; // walidacja min < max
@@ -14,10 +16,6 @@ public class Gym {
     private double max_weight; // walidacja min < max
     private int series;
     private double rest_time;
-
-    // czy to ma sens
-    @OneToMany(mappedBy = "workout")
-    private List<Exercise> exercises;
 
     public Gym() {
     }

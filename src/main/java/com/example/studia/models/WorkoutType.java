@@ -10,12 +10,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// dzidziczenie z modeli typów?
+import java.util.List;
+
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "workout_type")
 public class WorkoutType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,25 +29,17 @@ public class WorkoutType {
 
     private double time; // czas trwania treningu
 
-    private ForeignKey workoutType; // FK do konkretnego typu trenignu
+    @OneToMany(mappedBy = "workout")
+    private List<Exercise> exercises;
 
 
-    // tu cos do poprawy
+    // model z ktorego dziedzicza modele typu treningu
     public WorkoutType(String description, String image, ForeignKey workoutType, double time) {
         this.name = workoutType.getClass().getName();
         this.description = description;
         this.image = image;
-        this.workoutType = workoutType;
         this.time = time;
     }
-    public ForeignKey getWorkoutType() {
-        return workoutType;
-    }
-
-    public void setWorkoutType(ForeignKey workoutType) {
-        this.workoutType = workoutType;
-    }
-
     public String getName() {
         return name;
     }

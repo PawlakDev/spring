@@ -1,6 +1,12 @@
 package com.example.studia.models.workout_type;
 
-public class IndoorRower {
+import com.example.studia.models.WorkoutType;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("indoor_rower")
+public class IndoorRower  extends WorkoutType {
     // distance, avg_speed, avg_heart_rate, avg_watts
     private double distance; // walidacja na dystans
     private double avgSpeed;
