@@ -20,7 +20,7 @@ public class PlannedWorkout {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneyToOne
+    @OneToOne
     @JoinColumn(name = "workout_type_id")
     private WorkoutType workoutType;
 

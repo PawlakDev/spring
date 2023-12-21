@@ -1,11 +1,9 @@
 package com.example.studia.models;
 
 import jakarta.persistence.*;
-import org.springframework.boot.convert.DurationFormat;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.format.annotation.NumberFormat;
 
 
 @Entity
@@ -21,18 +19,14 @@ public class Exercise {
     private String name;
     private String description;
 
-    @DurationFormat()
-    private int duration;  // czas trwania w sekundach can be null
+    // import org.springframework.boot.convert.DurationFormat; idk czy z tego skorzystac?
+    @NumberFormat
+    private Integer duration; // Integer zamiast int, aby obsłużyć wartość null
 
-    public Exercise() {
-        // domyślne wartości lub puste inicjalizacje
-    }
-
-    // Konstruktor z argumentami
-    public Exercise(String name, String description, int sets, int reps, int duration) {
+    // Konstruktor z wymaganymi polami
+    public Exercise(String name, String description) {
         this.name = name;
         this.description = description;
-        this.duration = duration;
     }
 
 }

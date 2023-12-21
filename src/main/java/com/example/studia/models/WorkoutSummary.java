@@ -3,9 +3,7 @@ package com.example.studia.models;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 @Entity
@@ -33,12 +31,6 @@ public class WorkoutSummary {
     private PlannedWorkout plannedWorkout;
     // na podstawie tego pola będziemy wiedzieć, czy trening odbył sie zgodnie z planem
 
-    // Domyślny konstruktor
-    public WorkoutSummary() {
-        // domyślne wartości lub puste inicjalizacje
-    }
-
-    // Konstruktor z argumentem
     public WorkoutSummary(WorkoutType workoutType) {
         this.name = workoutType.getName();
     }
@@ -63,10 +55,4 @@ public class WorkoutSummary {
     public void setUser(User user) {
         this.user = user;
     }
-
-    public void setWorkoutPlan(WorkoutPlan workoutPlan) {
-        this.workoutPlan = workoutPlan;
-    }
-
-    // Pozostałe gettery, jeśli są potrzebne
 }

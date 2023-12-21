@@ -32,23 +32,4 @@ public class WorkoutType {
     @OneToMany(mappedBy = "workout")
     private List<Exercise> exercises;
 
-
-    // model z ktorego dziedzicza modele typu treningu
-    public WorkoutType(String description, String image, ForeignKey workoutType, double time) {
-        this.name = workoutType.getClass().getName();
-        this.description = description;
-        this.image = image;
-        this.time = time;
-    }
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

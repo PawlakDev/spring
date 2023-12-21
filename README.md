@@ -10,7 +10,6 @@ Jest równiez mozliwość planowania treningów, dodawania ćwiczeń do planu tr
 * Frontend: szkielet aplikacji 
   - W przypadku użycia Spring REST API frontend zrobiony przy użyciu wybranego narzędzia.
 
-* Bazy danych: analiza pol modeli i relacji
 * Backend :
 ###  1. zaprojektowanie modeli bazy danych
 
