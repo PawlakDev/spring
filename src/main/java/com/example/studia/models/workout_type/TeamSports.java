@@ -13,8 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TeamSports  extends WorkoutType {
-    private double avg_speed;
-    private double avg_heart_rate;
-    private int sets_number;
-    private int points_number;
+    private double avgSpeed;
+    private int setsNumber;
+    private int pointsNumber;
 }

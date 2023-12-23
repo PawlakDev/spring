@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Running  extends WorkoutType {
     private double distance;
-    private double avg_speed;
-    private double avg_heart_rate;
+    private double avgSpeed;
+    private double avgHeartRate;
     private boolean internals; // czy trening miał elementy interwałowe, default False
 
 

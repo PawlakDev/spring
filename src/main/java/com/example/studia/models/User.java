@@ -1,6 +1,8 @@
 package com.example.studia.models;
 
 import jakarta.persistence.*;
+
+import java.sql.ConnectionBuilder;
 import java.util.Collection;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +26,9 @@ public class User implements UserDetails {
     private String firstName;
     private String lastName;
     private int birthYear;
+
+//    public static ConnectionBuilder withUsername(String user1) {
+//    }
 
 
     @Override

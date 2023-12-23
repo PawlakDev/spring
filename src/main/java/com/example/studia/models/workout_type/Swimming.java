@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class Swimming  extends WorkoutType {
     private double distance; // w metrach lub km?
-    private double avg_speed;
-    private double avg_heart_rate;
+    private double avgSpeed;
+    private double avgHeartRate;
     private String style;
 
 }

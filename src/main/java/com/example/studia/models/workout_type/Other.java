@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Other  extends WorkoutType {
-    private double avg_heart_rate;
+    private double avgHeartRate;
     private String name;
 
     public Other(String namee){

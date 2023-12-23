@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Bike extends WorkoutType {
     private double distance;
     private double time;
-    private double avg_speed;
-    private double avg_heart_rate;
+    private double avgSpeed;
+    private double avgHeartRate;
 
 }

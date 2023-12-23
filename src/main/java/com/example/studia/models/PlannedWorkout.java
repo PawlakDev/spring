@@ -24,6 +24,9 @@ public class PlannedWorkout {
     @JoinColumn(name = "workout_type_id")
     private WorkoutType workoutType;
 
+    @ManyToOne
+    @JoinColumn(name = "workout_plan_id")
+    private WorkoutPlan workoutPlan;
 
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime date; // albo dzien tygodnia moze miec sens tez
