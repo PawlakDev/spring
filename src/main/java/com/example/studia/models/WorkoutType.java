@@ -29,7 +29,7 @@ public class WorkoutType {
 
     private double time; // czas trwania treningu
 
-    @OneToMany(mappedBy = "workout")
+    @OneToMany(mappedBy = "workoutType")
     private List<Exercise> exercises;
 
 }

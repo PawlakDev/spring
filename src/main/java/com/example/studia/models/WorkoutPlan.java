@@ -22,7 +22,7 @@ public class WorkoutPlan {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "planned_workout_id")
+    @OneToMany(mappedBy = "workoutPlan")
     private List<PlannedWorkout> plannedWorkouts;
 
 }
