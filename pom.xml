@@ -28,17 +28,17 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.4.2</version> <!-- idk cz to tu powinno być -->
+<!--			<version>2.4.2</version> &lt;!&ndash; idk cz to tu powinno być &ndash;&gt;-->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>5.7.3</version> <!-- idk cz to tu powinno być to jest aby WebSecurityConfigurerAdapter dzialal-->
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.security</groupId>-->
+<!--			<artifactId>spring-security-config</artifactId>-->
+<!--			<version>5.7.3</version> &lt;!&ndash; idk cz to tu powinno być to jest aby WebSecurityConfigurerAdapter dzialal&ndash;&gt;-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
