@@ -23,6 +23,10 @@ public class Exercise {
     @NumberFormat
     private Integer duration; // Integer zamiast int, aby obsłużyć wartość null
 
+    @ManyToOne
+    @JoinColumn(name = "workout_type_id")
+    private WorkoutType workoutType;
+
     // Konstruktor z wymaganymi polami
     public Exercise(String name, String description) {
         this.name = name;

@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Gym extends WorkoutType {
-    private int min_reps;
-    private int max_reps; // walidacja min < max
-    private double min_weight;
-    private double max_weight; // walidacja min < max
+    private int minReps;
+    private int maxReps; // walidacja min < max
+    private double minWeight;
+    private double maxWeight; // walidacja min < max
     private int series;
-    private double rest_time;
+    private double restTime;
 
 }

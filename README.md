@@ -7,11 +7,11 @@ Aplikacja służy do prowadzenia dzienniczka treningowego. Użytkownik może dod
 Jest równiez mozliwość planowania treningów, dodawania ćwiczeń do planu treningowego, edycji, usuwania planów treningowych.
 
 ## Funkcjonalności nad którymi obecnie pracujemy:
-* Frontend: szkielet aplikacji 
+* **Frontend**: szkielet aplikacji 
   - W przypadku użycia Spring REST API frontend zrobiony przy użyciu wybranego narzędzia.
 
-* Backend :
-###  1. zaprojektowanie modeli bazy danych
+* **Backend** :
+###  1. Modele bazy danych:
 
 #### 1.1. Modele główne bazy danych:
  - user - korzystanie z Spring Security. Pola: login, hasło, imie, nazwisko, rok urodzenia 
