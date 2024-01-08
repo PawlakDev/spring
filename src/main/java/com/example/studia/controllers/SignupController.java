@@ -1,4 +1,4 @@
-package com.example.studia.controller;
+package com.example.studia.controllers;
 
 import com.example.studia.models.User;
 import com.example.studia.services.UserService;
