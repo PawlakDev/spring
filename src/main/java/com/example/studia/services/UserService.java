@@ -29,5 +29,8 @@ public class UserService implements UserDetailsService {
         // role logic
         return userRepository.save(user);
     }
+    public User getUserByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 }
 

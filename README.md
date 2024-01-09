@@ -3,8 +3,11 @@
 ## Projekt zaliczeniowy na przedmiot Programowanie Java 2.
 
 ## Opis projektu
-Aplikacja służy do prowadzenia dzienniczka treningowego. Użytkownik może dodawać treningi, ćwiczenia, wyświetlać statystyki treningów, ćwiczeń, wykresy, wyświetlać informacje o swoim profilu, edytować dane, zmieniać hasło, usuwać konto.
-Jest równiez mozliwość planowania treningów, dodawania ćwiczeń do planu treningowego, edycji, usuwania planów treningowych.
+Aplikacja służy do planowania treningó. Użytkownik może dodawać:
+* plany treningowe przypisane do siebie
+* treningi przypisane do planu treningowego 
+* ćwiczenia przypisane do treningu,
+Jest równiez mozliwość wyświetlania danych, edycji i usuwania.
 
 ## Funkcjonalności nad którymi obecnie pracujemy:
 * **Frontend**: szkielet aplikacji 
@@ -18,7 +21,6 @@ Jest równiez mozliwość planowania treningów, dodawania ćwiczeń do planu tr
  - trening planowany (PlannedWorkout) - model opisuje planowany trening w planie treningowym. Końcówka CRUD, model ma mieć FK do workoutType, pozostałe pola: data (lub dzień tygodnia)
  - plan treningowy (WorkoutPlan) - końcówka CRUD, model ma mieć FK do usera i zawiera liste planowanych treningów
  - cwiczenie (Exercise) - końcówka CRUD, model jest wykorzystywany do siłowni i ma pola: nazwa, opis, czas trwania
- - trening odbyty (WorkoutSummary) - końcówka CRUD, model ma mieć FK do usera, FK do treningu planowanego, inne do dodania pola
  - typ treningu (WorkoutType) - Model generyczny dla modeli typów treningów. Zawiera czas liste ćwiczeń
  #### 1.2. Modele typu treningu - dziedziczą po typie treningu:
  - siłownia (Gym) - końcówka READONLY, pola: min reps, max reps, min weight, max weight, series, rest_time
