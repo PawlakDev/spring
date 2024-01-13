@@ -27,4 +27,14 @@ public class SignupController {
         userService.save(user);
         return "redirect:/login";
     }
+
+    @GetMapping("/login")
+    public String customLogin() {
+        return "login"; // Zwraca nazwę widoku strony logowania (np. custom-login.html)
+    }
+
+    @GetMapping("/welcome")
+    public String greeting() {
+        return "welcome";
+    }
 }
