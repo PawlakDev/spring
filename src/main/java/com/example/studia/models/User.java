@@ -28,9 +28,21 @@ public class User implements UserDetails {
     private String lastName;
     private int birthYear;
 
-//    public static ConnectionBuilder withUsername(String user1) {
-//    }
+    public String getUsername() {
+        return username;
+    }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

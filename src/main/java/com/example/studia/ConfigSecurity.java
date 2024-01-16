@@ -28,8 +28,7 @@ public class ConfigSecurity {
 
     @Bean
     public AuthenticationManager authManager(HttpSecurity http) throws Exception {
-        AuthenticationManagerBuilder authenticationManagerBuilder =
-                http.getSharedObject(AuthenticationManagerBuilder.class);
+        AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.authenticationProvider(authProvider);
         return authenticationManagerBuilder.build();
     }
@@ -65,13 +64,15 @@ public class ConfigSecurity {
         return provider;
     }
 
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/", "/login").permitAll()
-                                .anyRequest().authenticated()
+                                .requestMatchers("/", "/login","/styles/**").permitAll()
+                                .anyRequest().permitAll()
+//                                .anyRequest().authenticated()
 
                 )
                 .formLogin(formLogin ->
