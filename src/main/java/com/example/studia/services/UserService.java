@@ -1,36 +1,27 @@
 package com.example.studia.services;
 
-import com.example.studia.models.User;
-import com.example.studia.repositories.UserRepository;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import com.example.studia.models.UserEntity;
+import com.example.studia.repositories.UserEntityRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import static com.example.studia.ConfigSecurity.passwordEncoder;
-
 @Service
-public class UserService implements UserDetailsService {
+@RequiredArgsConstructor
+public class UserService {
 
-    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final UserEntityRepository userEntityRepository;
 
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-            User user = userRepository.findByUsername(username);
-
-            return user;
-    }
-
-    public User save(User user) {
-        // role logic
-        return userRepository.save(user);
-    }
-    public User getUserByUsername(String username) {
-        return userRepository.findByUsername(username);
+    public void createUser(){
+        UserEntity user = new UserEntity();
+        user.setBirthYear(2000);
+        user.setUsername("test");
+        user.setFirstName("test");
+        user.setLastName("test");
+        user.setRoles("ROLE_USER");
+        user.setId(3l);
+        user.setPassword(passwordEncoder.encode("1234"));
+        userEntityRepository.save(user);
     }
 }
-

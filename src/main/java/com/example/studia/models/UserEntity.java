@@ -2,13 +2,9 @@ package com.example.studia.models;
 
 import jakarta.persistence.*;
 
-import java.sql.ConnectionBuilder;
-import java.util.Collection;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.*;
-import org.springframework.security.core.userdetails.UserDetails;
 
 
 @Entity
@@ -16,7 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "\"user\"")
-public class User implements UserDetails {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +23,24 @@ public class User implements UserDetails {
     private String firstName;
     private String lastName;
     private int birthYear;
+
+    private String roles;
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -44,30 +58,27 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        // logika przypisywania ról użytkownikowi
-        return null;
+    public String getFirstName() {
+        return firstName;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
+    public String getLastName() {
+        return lastName;
     }
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    @Override
-    public boolean isEnabled() {
-        return false;
+    public int getBirthYear() {
+        return birthYear;
     }
 
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
 }

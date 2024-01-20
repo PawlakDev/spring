@@ -1,6 +1,6 @@
 package com.example.studia.controllers;
 
-import com.example.studia.models.User;
+import com.example.studia.models.UserEntity;
 import com.example.studia.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,27 +10,27 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class SignupController {
 
-    private final UserService userService;
+//    private final UserService userService;
 
-    public SignupController(UserService userService) {
-        this.userService = userService;
-    }
+//    public SignupController(UserService userService) {
+//        this.userService = userService;
+//    }
 
     @GetMapping("/signup")
     public String showSignupForm(Model model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new UserEntity());
         return "signup"; // Create a corresponding signup.html template
     }
 
-    @PostMapping("/signup")
-    public String processSignupForm(User user) {
-        userService.save(user);
-        return "redirect:/login";
-    }
+//    @PostMapping("/signup")
+//    public String processSignupForm(UserEntity user) {
+//        userService.save(user);
+//        return "redirect:/login";
+//    }
 
     @GetMapping("/login")
     public String customLogin() {
-        return "login"; // Zwraca nazwę widoku strony logowania (np. custom-login.html)
+        return "login"; //
     }
 
     @GetMapping("/welcome")

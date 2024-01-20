@@ -1,6 +1,6 @@
 package com.example.studia.services;
 
-import com.example.studia.models.User;
+import com.example.studia.models.UserEntity;
 import com.example.studia.models.WorkoutPlan;
 import com.example.studia.repositories.WorkoutPlanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +23,11 @@ public class WorkoutPlanService {
         return workoutPlanRepository.findAll();
     }
 
-    public List<WorkoutPlan> getWorkoutPlansByUser(User user) {
+    public List<WorkoutPlan> getWorkoutPlansByUser(UserEntity user) {
         return workoutPlanRepository.findByUser(user);
     }
 
-    public WorkoutPlan getWorkoutPlanByIdAndUser(Long id, User user) {
+    public WorkoutPlan getWorkoutPlanByIdAndUser(Long id, UserEntity user) {
         return workoutPlanRepository.findByIdAndUser(id, user);
     }
 

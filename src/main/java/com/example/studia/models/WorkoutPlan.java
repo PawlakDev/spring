@@ -20,7 +20,7 @@ public class WorkoutPlan {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserEntity user;
 
     @OneToMany(mappedBy = "workoutPlan")
     private List<PlannedWorkout> plannedWorkouts;
