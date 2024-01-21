@@ -1,7 +1,9 @@
 .main{
+    padding-top:10px;
     display:flex;
 }
 .leftSiteBar{
+    margin-left:10px;
     background-color: #E8E8E8;
     height: 95vh;
     width: 250px;

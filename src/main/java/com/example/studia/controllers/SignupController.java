@@ -2,31 +2,35 @@ package com.example.studia.controllers;
 
 import com.example.studia.models.UserEntity;
 import com.example.studia.services.UserService;
+import jakarta.validation.Valid;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class SignupController {
 
-//    private final UserService userService;
-
-//    public SignupController(UserService userService) {
-//        this.userService = userService;
-//    }
-
-    @GetMapping("/signup")
-    public String showSignupForm(Model model) {
-        model.addAttribute("user", new UserEntity());
-        return "signup"; // Create a corresponding signup.html template
+    @GetMapping("/register")
+    public String showRegistrationForm(Model model){
+        // create model object to store form data
+        UserEntity user = new UserEntity();
+        model.addAttribute("user", user);
+        return "register";
     }
 
-//    @PostMapping("/signup")
-//    public String processSignupForm(UserEntity user) {
-//        userService.save(user);
-//        return "redirect:/login";
-//    }
+    // handler method to handle user registration form submit request
+    @PostMapping("/register/save")
+    public String registration(@Valid @ModelAttribute("user") UserEntity userDto,
+                               BindingResult result,
+                               Model model){
+        UserService userService = null;
+        userService.createUser();
+        return "redirect:/register?success";
+    }
 
     @GetMapping("/login")
     public String customLogin() {

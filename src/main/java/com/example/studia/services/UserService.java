@@ -16,9 +16,9 @@ public class UserService {
     public void createUser(){
         UserEntity user = new UserEntity();
         user.setBirthYear(2000);
-        user.setUsername("test");
-        user.setFirstName("test");
-        user.setLastName("test");
+        user.setUsername("ble");
+        user.setFirstName("ble");
+        user.setLastName("ble");
         user.setRoles("ROLE_USER");
         user.setId(3l);
         user.setPassword(passwordEncoder.encode("1234"));

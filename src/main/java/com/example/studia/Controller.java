@@ -47,9 +47,8 @@ public class Controller {
     }
 
     @PostMapping("/authenticate")
-    public String authenticateAndGetToken(AuthRequest authRequest) {
+    public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
         try{
-            System.out.println("test");
             Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
             if (authentication.isAuthenticated()) {
                 System.out.println("authenticated");

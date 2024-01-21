@@ -40,18 +40,13 @@ public class ConfigSecurity {
         http
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/welcome").authenticated()
-                                .anyRequest().permitAll()
-                )
-                .sessionManagement(sessionManagement ->
-                        sessionManagement
-                                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                                .requestMatchers("/login","/register").permitAll()
+                                .anyRequest().authenticated()
                 )
                 .formLogin(formLogin ->
                         formLogin
                                 .loginPage("/login")
                                 .defaultSuccessUrl("/welcome")
-                                .loginProcessingUrl("/authenticate")
                                 .permitAll()
                 )
                 .authenticationProvider(authenticationProvider())
@@ -75,26 +70,8 @@ public class ConfigSecurity {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService2(){
-
-        UserDetails ramesh = User.builder()
-                .username("ramesh")
-                .password(passwordEncoder().encode("password"))
-                .roles("USER")
-                .build();
-
-        UserDetails admin = User.builder()
-                .username("admin")
-                .password(passwordEncoder().encode("admin"))
-                .roles("ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(ramesh, admin);
     }
 
 }
