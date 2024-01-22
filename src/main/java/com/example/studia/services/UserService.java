@@ -13,15 +13,14 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final UserEntityRepository userEntityRepository;
 
-    public void createUser(){
+
+    public void createUser(String firstName, String lastName, String password, int birth){
         UserEntity user = new UserEntity();
-        user.setBirthYear(2000);
-        user.setUsername("ble");
-        user.setFirstName("ble");
-        user.setLastName("ble");
+        user.setBirthYear(birth);
         user.setRoles("ROLE_USER");
-        user.setId(3l);
-        user.setPassword(passwordEncoder.encode("1234"));
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setPassword(passwordEncoder.encode(password));
         userEntityRepository.save(user);
     }
 }

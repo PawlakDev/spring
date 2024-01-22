@@ -27,13 +27,6 @@ public class Controller {
         return "This endpoint is not secured";
     }
 
-    @GetMapping("/new")
-    public String addNewUser() {
-        createUser.createUser();
-        return "welcone";
-//        return "User created";
-    }
-
     @GetMapping("/all")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public List<UserEntity> getAllTheProducts() {

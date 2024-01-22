@@ -40,7 +40,7 @@ public class ConfigSecurity {
         http
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/login","/register").permitAll()
+                                .requestMatchers("/login","/register", "/register/save").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .formLogin(formLogin ->
