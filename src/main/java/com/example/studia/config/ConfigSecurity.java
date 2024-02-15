@@ -24,11 +24,13 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 @RequiredArgsConstructor
 public class ConfigSecurity {
+    public static String defaultSuccessUrl = "/welcome";
     private final UserEntityRepository userEntityRepository;
     private final JwtAuthFilter jwtAuthFilter;
     @Bean
@@ -40,20 +42,22 @@ public class ConfigSecurity {
         http
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/login","/register", "/register/save").permitAll()
+                                .requestMatchers("/login", "/register", "/register/save", "/styles/**","/images/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .formLogin(formLogin ->
                         formLogin
                                 .loginPage("/login")
-                                .defaultSuccessUrl("/welcome")
+                                .defaultSuccessUrl(defaultSuccessUrl)
                                 .permitAll()
                 )
                 .authenticationProvider(authenticationProvider())
-                .csrf(csrf -> csrf.disable())
+//                .csrf(csrf -> csrf.disable())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+
         return http.build();
     }
+
 
 
     @Bean

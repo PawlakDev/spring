@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{index.html :: head}"></head>
+<body>
+<div class="main">
+  <div th:replace="~{index.html :: leftSiteBar}">
+
+  </div>
+
+  <div class="right">
+    <nav class="blue-nav-bar-left">
+
+    </nav>
+
+    <div class="dashboard">
+      <div class="dashboard-title">
+        <h1> Lista Treningów </h1>
+      </div>
+
+      <table>
+        <thead>
+        <tr>
+          <th>Nazwa</th>
+          <th>Opis</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="workout : ${workouts}">
+          <td th:text="${workout.type}"></td>
+          <td th:text="${workout.description}"></td>
+          <!-- Dodaj inne komórki, jeśli istnieją -->
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

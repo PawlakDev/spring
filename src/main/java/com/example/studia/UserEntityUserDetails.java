@@ -35,6 +35,7 @@ public class UserEntityUserDetails implements UserDetails {
         return password;
     }
 
+
     @Override
     public String getUsername() {
         return userName;

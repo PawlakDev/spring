@@ -22,4 +22,5 @@ public class UserEntityUserDetailsService implements UserDetailsService {
         Optional<UserEntity> userEntity = userEntityRepository.findByUsername(username);
         return userEntity.map(UserEntityUserDetails::new).orElseThrow(()-> new UsernameNotFoundException("User not found "+username));
     }
+
 }

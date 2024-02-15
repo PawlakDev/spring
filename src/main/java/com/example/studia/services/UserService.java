@@ -14,13 +14,19 @@ public class UserService {
     private final UserEntityRepository userEntityRepository;
 
 
-    public void createUser(String firstName, String lastName, String password, int birth){
+    public void createUser(String firstName, String lastName, String username, int birth, String password ){
         UserEntity user = new UserEntity();
+        user.setUsername(username);
         user.setBirthYear(birth);
-        user.setRoles("ROLE_USER");
+        user.setRoles("ROLE_ADMIN");
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setPassword(passwordEncoder.encode(password));
         userEntityRepository.save(user);
     }
+
+    public Long findUserIdByUsername(String username){
+        return userEntityRepository.findByUsername(username).get().getId();
+    }
+
 }

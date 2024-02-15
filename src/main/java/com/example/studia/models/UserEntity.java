@@ -22,6 +22,7 @@ public class UserEntity {
     private String password;
     private String firstName;
     private String lastName;
+
     private int birthYear;
 
     private String roles;

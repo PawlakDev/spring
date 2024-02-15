@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{/styles/style.css}" />
@@ -13,70 +13,135 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/}">Spring Security Custom Login Example</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
-
 <div class="main">
-    <div class="leftSiteBar">
-        <div class="siteBarUpMenu">
-            <h2> Menu </h2>
-            <i class="icon-reorder"></i>
-        </div>
+    <div class="leftSiteBar" th:fragment="leftSiteBar">
+        <nav class="blue-nav-bar-left">
+            <span>Admin Panel</span>
+        </nav>
 
-        <div class="search"> <i class="icon-search"> <span style="padding-left:10px">Search</span> </i></div>
+        <div class="siteBarUpMenu">
+            <h4 th:text="${name}"> </h4>
+            <span th:if="${role == 'ROLE_USER'}">UŻYTKOWNIK</span>
+            <span th:if="${role == 'ROLE_ADMIN'}">ADMINISTRATOR</span>
+        </div>
 
         <div class="menuList">
             <ul>
-                <p><b> Tasks </b> </p>
-                <li> item 1 </li>
-                <li> item 1 </li>
-                <li> item 1 </li>
-                <li> item 1 </li>
-                <li> item 1 </li>
+                <p><b> MENU </b> </p>
+
+                <li>
+                    <a href="/showTrainings">
+                        <div>
+                            <span> Dodaj Plan </span>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/showTrainings">
+                        <div>
+                            <span> Dodaj Trening </span>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/showTrainings">
+                        <div>
+                            <span> Dodaj Ćwiczenia </span>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/showTrainings">
+                        <div>
+                            <span> Dodaj 3 do usos </span>
+                        </div>
+                    </a>
+                </li>
+
             </ul>
         </div>
 
         <div class="menuList">
             <ul>
-                <li> item 1 </li>
-                <li> item 1 </li>
-                <li> item 1 </li>
-                <li> item 1 </li>
-                <li> item 1 </li>
+                <p><b> Nawigacja </b> </p>
+                <li>
+                    <a href="/showTrainings">
+                        <div>
+                            <span> Stronga główna </span>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/showTrainings">
+                        <div>
+                            <span> Lista treningów </span>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/showTrainings">
+                        <div>
+                            <span> Stronga główna </span>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/showTrainings">
+                        <div>
+                            <span> Stronga główna </span>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/showTrainings">
+                        <div>
+                            <span> Stronga główna </span>
+                        </div>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
 
     <div class="right">
-        <h1> Tablica Notatek </h1>
+        <nav class="blue-nav-bar-left">
 
-        <div class="table">
+        </nav>
 
-            <div class="box">
+        <div class="dashboard">
+            <div class="dashboard-title">
+                <h1> Panel Admina </h1>
+            </div>
 
-                <div class="noteBox"></div>
-                <div class="noteBox"></div>
-                <div class="noteBox"></div>
-                <div class="noteBox"></div>
-                <div class="noteBox"></div>
-                <div class="noteBox"></div>
+            <div class="table">
+
+                <div class="box">
+
+                    <div class="noteBox">
+                        <div class="noteBox-content">
+                            <div class="noteBox-integer">8</div>
+                            <div class="noteBox-title">Plany treningowe</div>
+                            <div class="noteBox-desc">Dodaj plan treningowy</div>
+                        </div>
+                    </div>
+                    <div class="noteBox"></div>
+                    <div class="noteBox"></div>
+                    <div class="noteBox"></div>
+                    <div class="noteBox"></div>
+                    <div class="noteBox"></div>
+
+                </div>
 
             </div>
 
         </div>
-
-        <form action="/add" method="post">
-            <label for="inputText">Wprowadź tekst:</label>
-            <input type="text" id="inputText" name="inputText"/>
-
-            <input type="submit" value="Prześlij"/>
-        </form>
     </div>
 </div>
 
