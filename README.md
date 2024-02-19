@@ -3,35 +3,11 @@
 ## Projekt zaliczeniowy na przedmiot Programowanie Java 2.
 
 ## Opis projektu
-Aplikacja służy do planowania treningó. Użytkownik może dodawać:
+Aplikacja służy do planowania treningów. Użytkownik może dodawać:
 * plany treningowe przypisane do siebie
 * treningi przypisane do planu treningowego 
 * ćwiczenia przypisane do treningu,
 Jest równiez mozliwość wyświetlania danych, edycji i usuwania.
-
-## Funkcjonalności nad którymi obecnie pracujemy:
-* **Frontend**: szkielet aplikacji 
-  - W przypadku użycia Spring REST API frontend zrobiony przy użyciu wybranego narzędzia.
-
-* **Backend** :
-###  1. Modele bazy danych:
-
-#### 1.1. Modele główne bazy danych:
- - user - korzystanie z Spring Security. Pola: login, hasło, imie, nazwisko, rok urodzenia 
- - trening planowany (PlannedWorkout) - model opisuje planowany trening w planie treningowym. Końcówka CRUD, model ma mieć FK do workoutType, pozostałe pola: data (lub dzień tygodnia)
- - plan treningowy (WorkoutPlan) - końcówka CRUD, model ma mieć FK do usera i zawiera liste planowanych treningów
- - cwiczenie (Exercise) - końcówka CRUD, model jest wykorzystywany do siłowni i ma pola: nazwa, opis, czas trwania
- - typ treningu (WorkoutType) - Model generyczny dla modeli typów treningów. Zawiera czas liste ćwiczeń
- #### 1.2. Modele typu treningu - dziedziczą po typie treningu:
- - siłownia (Gym) - końcówka READONLY, pola: min reps, max reps, min weight, max weight, series, rest_time
- - bieganie (Running) - końcówka READONLY, pola: distance, avg_speed, avg_heart_rate
- - rower (Bike) - końcówka READONLY, pola: distance, avg_speed, avg_heart_rate
- - ergometr (IndoorRower) - końcówka READONLY, pola: distance, avg_speed, avg_heart_rate, avg_watts
- - pływanie (Swimming) - końcówka READONLY, pola: distance, avg_speed, avg_heart_rate, style
- - gry zespolowe (TeamSports) - końcówka READONLY, pola: avg_speed, avg_heart_rate, sets_number, points_number
- - inne (Other) - końcówka READONLY, pola: distance, series, avg_speed, avg_heart_rate, description (wszystkie pola opcjonalne)
-### 2. Panel logowania i rejestracji dla usera - użytkownicy w bazie danych - Spring Security.
-
 
 ## Technologie
 * Java 11
