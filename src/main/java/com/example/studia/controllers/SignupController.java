@@ -34,7 +34,9 @@ public class SignupController {
     public String registration(@Valid @ModelAttribute("user") UserEntity userDto,
                                BindingResult result,
                                Model model){
-
+        if(result.hasErrors()){
+            return "register";
+        }
 
         System.out.println(userDto.getUsername());
         System.out.println(userDto.getPassword());

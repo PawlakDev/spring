@@ -2,6 +2,9 @@ package com.example.studia.models;
 
 import jakarta.persistence.*;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,11 +21,15 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Username is required")
     private String username;
+    @NotBlank(message = "Password is required")
+    @Size(min = 6, message = "Password must be at least 6 characters long")
     private String password;
     private String firstName;
     private String lastName;
 
+    @Min(value = 1920, message = "Birth year must be greater or equal to 1920")
     private int birthYear;
 
     private String roles;
