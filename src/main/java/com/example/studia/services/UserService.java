@@ -16,6 +16,9 @@ public class UserService {
 
     public void createUser(String firstName, String lastName, String username, int birth, String password ){
         UserEntity user = new UserEntity();
+        if(userEntityRepository.findByUsername(username).isPresent()){
+            throw new RuntimeException("User already exists");
+        }
         user.setUsername(username);
         user.setBirthYear(birth);
         user.setRoles("ROLE_ADMIN");
@@ -23,6 +26,7 @@ public class UserService {
         user.setLastName(lastName);
         user.setPassword(passwordEncoder.encode(password));
         userEntityRepository.save(user);
+
     }
 
     public Long findUserIdByUsername(String username){

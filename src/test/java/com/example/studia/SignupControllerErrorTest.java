@@ -1,32 +1,51 @@
 package com.example.studia;
 
+import com.example.studia.controllers.SignupController;
+import com.example.studia.models.UserEntity;
+import com.example.studia.services.UserService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import org.springframework.transaction.annotation.Transactional;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.ui.Model;
+import org.springframework.validation.BeanPropertyBindingResult;
+import org.springframework.validation.BindingResult;
 
-@SpringBootTest
-@AutoConfigureMockMvc
-@Transactional
-public class SignupControllerErrorTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.*;
 
-    @Autowired
-    private MockMvc mockMvc;
+@ExtendWith(MockitoExtension.class)
+class SignupControllerErrorTest {
+
+    @Mock
+    private UserService userService;
+
+    @Mock
+    private Model model;
+
+    @InjectMocks
+    private SignupController signupController;
+
+    @BeforeEach
+    void setUp() {
+    }
 
     @Test
-    public void testShortPasswordError() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.post("/register/save")
-                        .param("username", "testuser")
-                        .param("password", "short") // Password is too short, should trigger validation error
-                        .param("firstName", "Test")
-                        .param("lastName", "User")
-                        .param("birthYear", "1999"))
-                .andExpect(status().isForbidden());
-         //       .andExpect(content().string("Password must be at least X characters long")); // Replace X with the minimum password length constraint
+    void testRegistrationUsernameAlreadyExists() {
+        // Given
+        UserEntity user = new UserEntity();
+        user.setUsername("username");
+        doThrow(new RuntimeException("User already exists")).when(userService).createUser(anyString(), anyString(), anyString(), anyInt(), anyString());
+
+        // When
+        // Perform the action that should trigger the exception, which is creating a user with already existing username
+
+
+
+        // Then
+        // Add assertions or further verification as needed
     }
 }

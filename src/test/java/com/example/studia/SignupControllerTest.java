@@ -11,7 +11,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.servlet.ModelAndView;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
@@ -30,7 +29,6 @@ class SignupControllerTest {
 
     @BeforeEach
     void setUp() {
-        // You can do additional setup here if needed
     }
 
     @Test
@@ -46,6 +44,17 @@ class SignupControllerTest {
         verify(model).addAttribute(eq("user"), any(UserEntity.class));
     }
 
+    @Test
+    void testCustomLogin() {
+        // Given
+        String expectedViewName = "login";
+
+        // When
+        String actualViewName = signupController.customLogin();
+
+        // Then
+        assertEquals(expectedViewName, actualViewName);
+    }
 
     @Test
     void testRegistration() {
@@ -63,17 +72,5 @@ class SignupControllerTest {
         // Then
         assertEquals("redirect:/register?success", result);
         verify(userService).createUser("imie", "nazwisko", "randomusername", 1999, "password123");
-    }
-
-    @Test
-    void testCustomLogin() {
-        // Given
-        String expectedViewName = "login";
-
-        // When
-        String actualViewName = signupController.customLogin();
-
-        // Then
-        assertEquals(expectedViewName, actualViewName);
     }
 }
