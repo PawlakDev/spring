@@ -24,6 +24,10 @@ public class Workouts {
 
     private String description;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "plan_id")
+    private Plan plan;
+
     public Long getId() {
         return id;
     }
