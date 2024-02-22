@@ -18,6 +18,7 @@ public class Plan {
 
     private long idu;
 
+    private String name;
 
     //one to many field with workouts
     @OneToMany(mappedBy = "plan")
