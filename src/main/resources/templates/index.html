@@ -38,7 +38,7 @@
                 </li>
 
                 <li>
-                    <a href="/showTrainings">
+                    <a href="/addTraining">
                         <div>
                             <span> Dodaj Trening </span>
                         </div>
@@ -68,7 +68,7 @@
             <ul>
                 <p><b> Nawigacja </b> </p>
                 <li>
-                    <a href="/showTrainings">
+                    <a href="/">
                         <div>
                             <span> Stronga główna </span>
                         </div>
@@ -111,8 +111,12 @@
     </div>
 
     <div class="right">
-        <nav class="blue-nav-bar-left">
-
+        <nav th:fragment="hamburger" class="blue-nav-bar-left" id="hamburger">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
 
         <div class="dashboard">

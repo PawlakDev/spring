@@ -1,6 +1,9 @@
 package com.example.studia.controllers;
 
-import lombok.RequiredArgsConstructor;
+import com.example.studia.models.Workouts;
+import com.example.studia.services.UserService;
+import com.example.studia.services.WorkoutsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -8,18 +11,45 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-@RequiredArgsConstructor
-public class HTMLController {
-    @GetMapping
-    public String index(Model model){
+public class ShowTrainingsController {
+    @Autowired
+    private WorkoutsService workoutService;
+
+    private final UserService userService;
+
+    public ShowTrainingsController(UserService userService) {
+        this.userService = userService;
+    }
+
+
+    @GetMapping("/showTrainings")
+    public String getAllWorkouts(Model model) {
+
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         String currentPrincipalName = authentication.getName();
+
+        System.out.println(currentPrincipalName);
+
+        Long id = userService.findUserIdByUsername(currentPrincipalName);
+
+        List<Workouts> workouts = workoutService.getAllWorkouts();
+        List<Workouts> workoutsByUserId = new ArrayList<>();
+
+        workouts.forEach(workout -> {
+            if(workout.getIdu() == id){
+                workoutsByUserId.add(workout);
+            }
+        });
+
+        model.addAttribute("workouts", workoutsByUserId);
+
 
         model.addAttribute("name", currentPrincipalName);
 
@@ -39,6 +69,8 @@ public class HTMLController {
             model.addAttribute("role", "Brak roli");
         }
 
-        return "index";
+
+        return "showTrainings";
     }
+
 }
