@@ -16,41 +16,42 @@
       </div>
 
       <div class="container-workout-add">
-        <div class="training-date">
-          <label for="start">Data treningu :</label>
-          <input type="date" id="start" name="trip-start" value="2024-02-23" />
-        </div>
+          <form action="#" th:action="@{/addTraining}" th:object="${addTraining}" method="post">
+            <div class="training-date">
+              <label for="start">Data treningu :</label>
+              <input type="date" id="start" name="trainingDate" value="2024-02-23" />
+            </div>
 
-        <div class="training-type">
-            <label> Typ treningu :</label>
-          <select>
-            <option selected>Bieg</option>
-            <option>Siłownia</option>
-            <option>Ergometr</option>
-          </select>
-        </div>
+            <div class="training-type">
+                <label> Typ treningu :</label>
+              <select name="trainingType">
+                <option selected>Bieg</option>
+                <option>Siłownia</option>
+                <option>Ergometr</option>
+              </select>
+            </div>
 
-        <div class="training-distanse">
-          <label>Ilosc km</label>
+            <div class="training-distanse">
+              <label>Ilosc km</label>
 
-          <input type="number" id="quantity" name="quantity" min="1" max="100">
-        </div>
+              <input type="number" id="quantity" name="trainingDistanse" min="1" max="100">
+            </div>
 
-          <div class="training-time">
-            <label>Czas treningu</label>
-            <input type="time" id="appt" name="appt" min="00:00" max="23:59" required>
-          </div>
+              <div class="training-time">
+                <label>Czas treningu</label>
+                <input type="time" id="appt" name="trainingTime" min="00:00" max="23:59" required>
+              </div>
 
-        <div class="training-description">
-          <label for="description">Opis treningu</label>
-          <textarea id="description" name="description" rows="4" cols="50">
-          </textarea>
-        </div>
+            <div class="training-description">
+              <label for="description">Opis treningu</label>
+              <textarea id="description" name="trainingDescription" rows="4" cols="50" value=""></textarea>
+            </div>
 
-        <div class="add-training">
-          <button type="submit">Dodaj trening</button>
-        </div>
+            <div class="add-training">
+              <button type="submit"> Dodaj trening</button>
+            </div>
 
+        </form>
       </div>
 
     </div>
