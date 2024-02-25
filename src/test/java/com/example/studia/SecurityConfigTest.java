@@ -30,7 +30,7 @@ public class SecurityConfigTest {
     String defaultSuccessUrl = ConfigSecurity.defaultSuccessUrl;
 
     @Test
-//    @WithMockUser(username = "test", password = "12345", roles = "USER")
+//    @WithMockUser(username = "test", password = "1234", roles = "USER")
     public void loginTestPass() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/login")
                         .param("username", "test")

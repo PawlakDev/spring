@@ -21,6 +21,10 @@ public class AddTrainingModel {
         this.trainingDescription = trainingDescription;
     }
 
+    public AddTrainingModel() {
+
+    }
+
     public String getTrainingDescription() {
         return trainingDescription;
     }

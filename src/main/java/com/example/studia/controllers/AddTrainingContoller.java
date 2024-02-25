@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
 
 import com.example.studia.services.UserService;
 
+import static java.lang.Integer.parseInt;
+
 @Controller
 public class AddTrainingContoller {
 
@@ -81,6 +83,21 @@ public class AddTrainingContoller {
         System.out.println(training.getTrainingTime());
         System.out.println(training.getTrainingDescription());
 
+        String[] czas = training.getTrainingTime().split(":");
+        long trainingTime = parseInt(czas[0])*60+parseInt(czas[1]);
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        String currentPrincipalName = authentication.getName();
+
+        System.out.println(currentPrincipalName);
+
+        long id = userService.findUserIdByUsername(currentPrincipalName);
+
+        System.out.println(id);
+
+
+        workoutService.addTraining(training.getTrainingDate(), training.getTrainingType(), training.getTrainingDistanse(), trainingTime, training.getTrainingDescription(), id);
         return "redirect:/";
     }
 

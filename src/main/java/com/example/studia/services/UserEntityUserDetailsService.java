@@ -1,5 +1,6 @@
-package com.example.studia;
+package com.example.studia.services;
 
+import com.example.studia.UserEntityUserDetails;
 import com.example.studia.models.UserEntity;
 import com.example.studia.repositories.UserEntityRepository;
 import lombok.RequiredArgsConstructor;
