@@ -1,5 +1,6 @@
 package com.example.studia;
 
+import com.example.studia.services.JwtService;
 import com.example.studia.services.UserEntityUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

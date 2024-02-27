@@ -1,4 +1,4 @@
-package com.example.studia;
+package com.example.studia.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

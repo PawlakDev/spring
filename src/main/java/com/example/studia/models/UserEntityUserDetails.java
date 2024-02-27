@@ -1,4 +1,4 @@
-package com.example.studia;
+package com.example.studia.models;
 
 import com.example.studia.models.UserEntity;
 import org.springframework.security.core.GrantedAuthority;

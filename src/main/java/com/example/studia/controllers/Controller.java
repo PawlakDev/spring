@@ -1,7 +1,7 @@
 package com.example.studia.controllers;
 
 import com.example.studia.AuthRequest;
-import com.example.studia.JwtService;
+import com.example.studia.services.JwtService;
 import com.example.studia.models.UserEntity;
 import com.example.studia.repositories.UserEntityRepository;
 import com.example.studia.services.UserService;
