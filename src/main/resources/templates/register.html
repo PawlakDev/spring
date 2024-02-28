@@ -14,18 +14,25 @@
 <body class="register-page">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" th:href="@{/index}">Spring Security Register</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" th:href="@{/login}">Login</a>
-        </li>
-      </ul>
+    <div>
+      <a class="navbar-brand" th:href="@{/index}" th:text="#{spring.security.register}"></a>
     </div>
+  <div class="change-lang">
+    <a href="?lang=pl"> PL </a>
+    <span> / </span>
+    <a href="?lang=en"> EN </a>
   </div>
+<!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--      <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page" th:href="@{/login}">Login</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
 </nav>
 <br /><br /><br />
 <div class="container">

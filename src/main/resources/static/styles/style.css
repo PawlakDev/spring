@@ -38,10 +38,18 @@
     height: 45px;
     background-color: #4590b8;
 }
-.form-group.mb-3 span{
+.form-group.mb-3 a:hover{
+    color:#ff50ff;
+    text-decoration: none;
+}
+.form-group.mb-3 a{
+    color: aqua;
+    text-decoration: none;
+    font-weight: 500;
+}
+.form-group.mb-3 div{
     text-align: center;
     padding: 15px;
-    color: azure;
     padding-bottom: 0 ;
     padding-top: 25px;
 }
@@ -50,7 +58,7 @@
 }
 .form-group span{
     text-align: center;
-    padding: 15px;
+    padding: 5px;
     color: azure;
     padding-bottom: 0;
     padding-top: 25px;
@@ -306,4 +314,17 @@ h2{
 .add-training{
     padding-top:15px;
     font-size:20px;
+}
+.change-lang a{
+    text-decoration: none;
+    color:white;
+}
+.change-lang:hover{
+    color: #56c8ea !important;
+    border-color: #ffffff;
+    color: white !important;
+    transition: ease-in-out 0.3s;
+}
+.change-lang span{
+    color:white;
 }
