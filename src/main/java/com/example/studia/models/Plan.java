@@ -16,8 +16,6 @@ public class Plan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private long idu;
-
     private String name;
 
     //one to many field with workouts

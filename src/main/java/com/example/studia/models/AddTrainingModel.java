@@ -12,17 +12,29 @@ public class AddTrainingModel {
 
     private String trainingDescription;
 
+    private Plan plan_id;
 
-    public AddTrainingModel(String trainingDate,String trainingType, int trainingDistanse, String trainingTime, String trainingDescription) {
+
+    public AddTrainingModel(String trainingDate,String trainingType, int trainingDistanse, String trainingTime, String trainingDescription, Plan plan_id) {
         this.trainingDate = trainingDate;
         this.trainingType = trainingType;
         this.trainingDistanse = trainingDistanse;
         this.trainingTime = trainingTime;
         this.trainingDescription = trainingDescription;
+        this.plan_id = plan_id;
+
     }
 
     public AddTrainingModel() {
 
+    }
+
+    public Plan getPlan_id() {
+        return plan_id;
+    }
+
+    public void setPlan_id(Plan plan_id) {
+        this.plan_id = plan_id;
     }
 
     public String getTrainingDescription() {

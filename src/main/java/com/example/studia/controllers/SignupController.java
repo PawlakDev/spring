@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class SignupController {
     private final UserService userService;
 
+
     @GetMapping("/register")
     public String showRegistrationForm(Model model){
         // create model object to store form data

@@ -82,6 +82,7 @@ public class AddTrainingContoller {
         System.out.println(training.getTrainingDistanse());
         System.out.println(training.getTrainingTime());
         System.out.println(training.getTrainingDescription());
+        System.out.println(training.getPlan_id());
 
         String[] czas = training.getTrainingTime().split(":");
         long trainingTime = parseInt(czas[0])*60+parseInt(czas[1]);
@@ -97,7 +98,7 @@ public class AddTrainingContoller {
         System.out.println(id);
 
 
-        workoutService.addTraining(training.getTrainingDate(), training.getTrainingType(), training.getTrainingDistanse(), trainingTime, training.getTrainingDescription(), id);
+        workoutService.addTraining(training.getTrainingDate(), training.getTrainingType(), training.getTrainingDistanse(), trainingTime, training.getTrainingDescription(), id, training.getPlan_id());
         return "redirect:/";
     }
 

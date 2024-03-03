@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{index.html :: head}"></head>
+<body>
+<div class="main">
+  <div th:replace="~{index.html :: leftSiteBar}">
+
+  </div>
+
+  <div class="right">
+    <nav th:replace="~{index.html :: hamburger}"></nav>
+
+    <div class="dashboard">
+      <div class="dashboard-title">
+        <h1> Dodaj Ćwiczenie Do Planu </h1>
+      </div>
+
+
+      <div class="container-plan-exercise">
+        <form action="#" th:action="@{/addExercise}" th:object="${addExercise}" method="post">
+
+          <div class="execise-input">
+            <label for="name">Nazwa:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+
+          <div class="execise-desc">
+            <label for="description">Opis:</label>
+            <textarea id="description" name="description" rows="4" cols="50" value=""></textarea>
+          </div>
+
+          <div class="execise-input">
+            <label for="duration">Czas:</label>
+            <input type="number" id="duration" name="duration" class="form-control" required>
+          </div>
+
+          <div class="execise-input">
+            <label for="plan">ID Planu:</label>
+            <input type="number" id="plan" name="plan_id" class="form-control" required>
+          </div>
+
+          <div class="add-exercise">
+            <button class="button" type="submit">Dodaj nowy plan</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

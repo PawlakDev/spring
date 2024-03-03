@@ -21,12 +21,16 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Username is required")
+    @NotBlank(message = "{name.not.empty}")
     private String username;
-    @NotBlank(message = "Password is required")
-    @Size(min = 3, message = "Password must be at least 3 characters long")
+    @NotBlank(message = "{passwrod.not.empty}")
+    @Size(min = 3, message = "{password.size}")
     private String password;
+
+    @NotBlank(message = "{firstname.not.empty}")
     private String firstName;
+
+    @NotBlank(message = "{lastname.not.empty}")
     private String lastName;
 
     @Min(value = 1920, message = "Birth year must be greater or equal to 1920")

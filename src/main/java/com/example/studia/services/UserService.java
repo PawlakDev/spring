@@ -3,6 +3,7 @@ package com.example.studia.services;
 import com.example.studia.models.UserEntity;
 import com.example.studia.repositories.UserEntityRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,10 @@ public class UserService {
 
     public Long findUserIdByUsername(String username){
         return userEntityRepository.findByUsername(username).get().getId();
+    }
+
+    public UserEntity findUserByUsername(String username){
+        return userEntityRepository.findByUsername(username).get();
     }
 
 }

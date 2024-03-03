@@ -26,7 +26,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity
 @RequiredArgsConstructor
 public class ConfigSecurity {
-    public static String defaultSuccessUrl = "/welcome";
+    public static String defaultSuccessUrl = "/";
     private final UserEntityRepository userEntityRepository;
     private final JwtAuthFilter jwtAuthFilter;
     @Bean

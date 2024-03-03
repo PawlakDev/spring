@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="index.html :: head"> </head>
+<head th:replace="~{index.html :: head}"></head>
 <body>
+<div class="main">
+  <div th:replace="~{index.html :: leftSiteBar}">
 
-<div>
-  test
+  </div>
+
+  <div class="right">
+    <nav th:replace="~{index.html :: hamburger}"></nav>
+
+    <div class="dashboard">
+      <div class="dashboard-title">
+        <h1> Dodaj Plan </h1>
+      </div>
+
+      <div class="container-plan-add">
+        <form action="#" th:action="@{/addPlan}" th:object="${addPlan}" method="post">
+
+          <div class="add-plan">
+            <label for="nazwa">Nazwa:</label>
+            <input type="text" id="nazwa" name="name" class="form-control" required>
+          </div>
+
+          <div class="add-plan">
+            <button class="button" type="submit">Dodaj nowy plan</button>
+          </div>
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
 </div>
 
 </body>

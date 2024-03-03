@@ -56,7 +56,7 @@
 .form-group{
     padding-bottom:20px;
 }
-.form-group span{
+.form-group div{
     text-align: center;
     padding: 5px;
     color: azure;
@@ -80,12 +80,12 @@
 .form-group.mb-3 span a:hover{
     color: aqua !important;
 }
-.form-group span a{
+.form-group div a{
     text-decoration: none;
-    color:#ff50ff;
+    color:#ff50ff !important;
     font-weight: 500;
 }
-.form-group span a:hover{
+.form-group div a:hover{
     color: aqua !important;
 }
 .card{
@@ -327,4 +327,61 @@ h2{
 }
 .change-lang span{
     color:white;
+}
+.training-info-table th,td{
+    padding: 0 20px;
+}
+.training-info-table th{
+    padding-top:15px;
+    padding-bottom:15px;
+}
+.training-info-table table{
+    border-top: 1px solid black;
+    padding-top:10px;
+}
+p.text-danger{
+    margin: 0;
+    padding: 0;
+    padding-top:5px;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+}
+.form-group.mb-3{
+    margin:0 !important;
+    /*padding-:10px;*/
+}
+.training-info-table button{
+    margin-top:15px;
+    background: #1c1f28;
+    color: azure;
+}
+
+.training-sort{
+    display:flex;
+    gap:20px;
+}
+
+.button{
+    margin-top:15px;
+    background: #1c1f28;
+    color: azure;
+}
+
+.add-plan input{
+    max-width: 300px;
+}
+.execise-desc{
+    display: flex;
+    flex-direction: column;
+}
+.execise-desc textarea, .execise-input{
+    max-width:350px;
+}
+.training-planid{
+    padding-top:15px;
+    max-width:100px;
+}
+.training-planid input{
+    padding-bottom:5px;
 }

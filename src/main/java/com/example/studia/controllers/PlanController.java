@@ -51,12 +51,12 @@ public class PlanController {
         List<Plan> workoutsByUserId = new ArrayList<>();
 
         // adding existing workouts to the plan list
-        workouts.forEach(workout -> {
-            if(workout.getIdu() == id){
-                workoutsByUserId.add(workout);
-            }
-        });
-
+//        workouts.forEach(workout -> {
+//            if(workout.getIdu() == id){
+//                workoutsByUserId.add(workout);
+//            }
+//        });
+//
 
         model.addAttribute("plans", workoutsByUserId);
 

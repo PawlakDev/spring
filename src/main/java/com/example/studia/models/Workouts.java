@@ -28,6 +28,14 @@ public class Workouts {
     @JoinColumn(name = "plan_id")
     private Plan plan;
 
+    public Plan getPlan() {
+        return plan;
+    }
+
+    public void setPlan(Plan plan) {
+        this.plan = plan;
+    }
+
     public Long getId() {
         return id;
     }
