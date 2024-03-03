@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="~{index.html :: head}"></head>
 <body>
+<div class="main">
+    <div th:replace="~{index.html :: leftSiteBar}">
+
+    </div>
+
+    <div class="right">
+        <nav th:replace="~{index.html :: hamburger}"></nav>
+
+        <div class="dashboard">
+            <div class="dashboard-title">
+                <h1> Lista Planów </h1>
+            </div>
+            <div class="plans-info-table">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Nazwa</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="plan : ${plans}">
+                        <td th:text="${plan.getName()}" th:attr="data-plan-name=${plan.getName()}" onclick="loadPlan(this.getAttribute('data-plan-name'))"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form id="sortForm" method="get" action="/showTrainings">
+    <input type="hidden" id="sortBy" name="sortBy" value="">
+</form>
 
 </body>
 </html>

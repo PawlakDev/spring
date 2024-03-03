@@ -346,6 +346,26 @@ h2{
     border-top: 1px solid black;
     padding-top:10px;
 }
+.plans-info-table table {
+    border-top: 1px solid black;
+    padding-top:10px;
+}
+.plans-info-table tbody {
+    display: flex;
+    font-weight: 600;
+    font-size: 30px;
+}
+.plans-info-table th{
+    font-size:20px;
+}
+.plans-info-table td:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.plans-info-table thead{
+    padding-top: 10px;
+    display: block;
+}
 p.text-danger{
     margin: 0;
     padding: 0;
