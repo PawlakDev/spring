@@ -1,5 +1,8 @@
 package com.example.studia.controllers;
 
+import com.example.studia.models.Workouts;
+import com.example.studia.services.UserService;
+import com.example.studia.services.WorkoutsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,11 +13,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 @Controller
 @RequiredArgsConstructor
 public class HTMLController {
+
+    private final WorkoutsService workoutService;
+    private final UserService userService;
+
     @GetMapping
     public String index(Model model){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -22,6 +30,8 @@ public class HTMLController {
         String currentPrincipalName = authentication.getName();
 
         model.addAttribute("name", currentPrincipalName);
+
+        Long id = userService.findUserIdByUsername(currentPrincipalName);
 
         // Pobierz role (GrantedAuthority) z obiektu Authentication
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
@@ -38,6 +48,16 @@ public class HTMLController {
         } else {
             model.addAttribute("role", "Brak roli");
         }
+
+        List<Workouts> workouts = workoutService.getAllWorkouts();
+
+        AtomicInteger i= new AtomicInteger();
+        workouts.forEach(workout ->{
+            if(workout.getIdu() == id) {
+                i.getAndIncrement();
+            }
+        });
+            model.addAttribute("workoutsNumber", i);
 
         return "index";
     }

@@ -33,7 +33,7 @@
                 <li>
                     <a href="/addPlan">
                         <div>
-                            <span> Dodaj Plan </span>
+                            <span th:text="#{add.plan}"></span>
                         </div>
                     </a>
                 </li>
@@ -41,7 +41,7 @@
                 <li>
                     <a href="/addTraining">
                         <div>
-                            <span> Dodaj Trening </span>
+                            <span th:text="#{add.training}"></span>
                         </div>
                     </a>
                 </li>
@@ -49,15 +49,15 @@
                 <li>
                     <a href="/addExercise">
                         <div>
-                            <span> Dodaj Ćwiczenia </span>
+                            <span th:text="#{add.exercise}"></span>
                         </div>
                     </a>
                 </li>
 
                 <li>
-                    <a href="/showTrainings">
+                    <a href="/">
                         <div>
-                            <span> Dodaj 3 do usos </span>
+                            <span th:text="#{add.3.to.usos}"></span>
                         </div>
                     </a>
                 </li>
@@ -71,7 +71,7 @@
                 <li>
                     <a href="/">
                         <div>
-                            <span> Stronga główna </span>
+                            <span th:text="#{mainpage}"> Stronga główna </span>
                         </div>
                     </a>
                 </li>
@@ -79,7 +79,7 @@
                 <li>
                     <a href="/showTrainings">
                         <div>
-                            <span> Moje treningi </span>
+                            <span th:text="#{my.trainings}"></span>
                         </div>
                     </a>
                 </li>
@@ -118,6 +118,12 @@
                 <span></span>
                 <span></span>
             </div>
+
+            <div class="change-lang" id="index-change-lang">
+                <a href="?lang=pl"> PL </a>
+                <span> / </span>
+                <a href="?lang=en"> EN </a>
+            </div>
         </nav>
 
         <div class="dashboard">
@@ -131,12 +137,11 @@
 
                     <div class="noteBox">
                         <div class="noteBox-content">
-                            <div class="noteBox-integer">8</div>
-                            <div class="noteBox-title">Plany treningowe</div>
-                            <div class="noteBox-desc">Dodaj plan treningowy</div>
+                            <div class="noteBox-integer" th:text="${workoutsNumber}"></div>
+                            <div class="noteBox-title">Zrobionych treningow</div>
                         </div>
                     </div>
-                    <div class="noteBox"></div>
+                    <div class="noteBox" id="color-red"></div>
                     <div class="noteBox"></div>
                     <div class="noteBox"></div>
                     <div class="noteBox"></div>

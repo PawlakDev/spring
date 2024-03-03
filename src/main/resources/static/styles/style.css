@@ -14,10 +14,13 @@
     background-color: #3d81a8;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center !important;
     color:white;
     font-weight: 700;
     font-size: 18px;
+}
+#index-change-lang{
+    padding-right:15px;
 }
 .siteBarUpMenu{
     /*background-color:#1c1f28;*/
@@ -231,6 +234,7 @@ h2{
 .dashboard{
     padding-left:15px;
     padding-top:15px;
+    padding-right:15px;
 }
 .box{
     margin: 0;
@@ -247,8 +251,11 @@ h2{
     padding:0!important;
 }
 .noteBox-content{
-    position:relative;
-    top:10px;
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    font-weight: 500;
 }
 .menuList > ul > p{
     background-color: #1c1f28;
@@ -268,7 +275,7 @@ h2{
     grid-column: span 2;
 }
 #hamburger{
-    justify-content: flex-start;
+    justify-content: space-between !important;
     border-left: 1px dotted black;
 }
 .hamburger{
@@ -364,8 +371,12 @@ p.text-danger{
 
 .button{
     margin-top:15px;
-    background: #1c1f28;
     color: azure;
+}
+.black-button{
+    margin-top:15px;
+    background: #1c1f28;
+    color:azure;
 }
 
 .add-plan input{
@@ -384,4 +395,7 @@ p.text-danger{
 }
 .training-planid input{
     padding-bottom:5px;
+}
+#color-red{
+    background: linear-gradient(180deg, rgb(184 15 15) 65%, rgb(198 17 39) 71%);
 }
